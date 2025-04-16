@@ -1,0 +1,62 @@
+
+
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .header nav a:hover {
+    color: orange;
+    cursor: pointer;
+  }
+
+  
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header nav {
+      display: none;
+    }
+  
+    .header .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .header .mobile-nav.open {
+      display: block;
+    }
+  }
+  

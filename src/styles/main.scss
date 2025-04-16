@@ -1,0 +1,5 @@
+// imports common at the top media queries at the bottom
+
+@use "./common/variables.scss";
+@use "./common/mixins.scss";
+@use "./common/common.scss";
