@@ -1,11 +1,15 @@
 //to connect to cart need to link add to cart button with setCart from useContext
 
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ShopContext } from '../../context/ShopContext';
 
 function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(0);
+  const {addCart} = useContext(ShopContext);
+
+
 
   return (
     <div
@@ -36,7 +40,7 @@ function ProductCard({ product }) {
 
       
       <button
-        onClick={() => alert(`Added ${quantity} ${product.title}(s) to cart`)}
+        onClick={() => addCart(product, quantity)}
         disabled={quantity === 0}
       >
         Add to Cart

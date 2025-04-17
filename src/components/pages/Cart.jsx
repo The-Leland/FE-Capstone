@@ -5,14 +5,15 @@ import React, { useState, useContext } from 'react';
 // import './Cart.scss';
 import { ShopContext } from "../context/ShopContext";
 
-const { cart } = useContext(ShopContext);
+
 
 const SHIPPING_COST = 5.99;
 
 export default function CartPage() {
-  const [cart, setCart] = useState(cart);
-  const [modal, setModal] = useState(null);
-  const [selectedItem, setSelectedItem] = useState(null);
+    const [modal, setModal] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const { cart, setCart } = useContext(ShopContext);
+    console.log(cart)
 
   const moreItems = (id) => {
     setCart(cart.map(item =>
@@ -48,7 +49,8 @@ export default function CartPage() {
     setSelectedItem(null);
   };
 
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+ 
+  const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
   const total = subtotal + (cart.length > 0 ? SHIPPING_COST : 0);
 
   return (
@@ -61,8 +63,8 @@ export default function CartPage() {
         <>
           {cart.map(item => (
             <div key={item.id} className="cart-item">
-              <div>{item.name}</div>
-              <div>${item.price.toFixed(2)}</div>
+              <div>{item.product.title}</div>
+              <div>${item.product.price.toFixed(2)}</div>
               <div className="quantity-controls">
                 <button onClick={() => lessItems(item.id)}>-</button>
                 <span>{item.quantity}</span>

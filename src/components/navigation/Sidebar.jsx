@@ -24,7 +24,8 @@ const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar__search">
+      <div className="sidebar-
+      search">
         <input
           type="text"
           placeholder="Search products..."
@@ -33,7 +34,7 @@ const Sidebar = () => {
         />
       </div>
 
-      <div className="sidebar__sales">
+      <div className="sidebar-sales">
         <h3>On Sale</h3>
         <ul>
           {saleItems.map((item) => (
@@ -47,7 +48,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="sidebar__info">
+      <div className="sidebar-info">
         <h4>Lookin' Fresh Co.</h4>
         <p>Making you look sharp since 2025.</p>
         <p>Customer support: support@lookinfresh.fake</p>

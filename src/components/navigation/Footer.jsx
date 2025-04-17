@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>Contact us: info@nerdalert.com | Phone: (123) 456-7890</p>
-      <p>Address: 123 Nerd Street, Nerdtropolis, UT 12345</p>
+      <p>Contact us: you_is@lookinfresh.com | Phone: (123) 456-7890</p>
+      <p>Address: 123 Fresh Street, Flytropolis, UT 12345</p>
       <div className="footer-links">
         <Link to="/contact">Contact Us</Link>
         <Link to="/about">About</Link>

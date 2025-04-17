@@ -1,0 +1,87 @@
+
+@import './variables';
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: $charcoal-gray;
+    color: $crisp-white;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+    .sidebar__search {
+      input {
+        width: 100%;
+        padding: $spacing-sm;
+        margin-bottom: $spacing-md;
+        border: 1px solid $warm-gold;
+        border-radius: 5px;
+        background-color: $midnight-black;
+        color: $crisp-white;
+        font-family: $font-body;
+  
+        &::placeholder {
+          color: $crisp-white;
+        }
+      }
+    }
+  
+   
+    .sidebar__sales {
+      h3 {
+        font-family: $font-heading;
+        font-size: 1.2rem;
+        margin-bottom: $spacing-sm;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        .sale-item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: $spacing-sm;
+          
+          .sale-info {
+            p {
+              margin: 0;
+            }
+  
+            .title {
+              font-weight: bold;
+            }
+  
+            .price {
+              color: $warm-gold;
+            }
+          }
+        }
+      }
+    }
+  
+   
+    .sidebar__info {
+      margin-top: auto;
+      text-align: center;
+  
+      h4 {
+        font-family: $font-heading;
+        font-size: 1.3rem;
+        margin-bottom: $spacing-sm;
+      }
+  
+      p {
+        font-family: $font-body;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  

@@ -1,12 +1,13 @@
 
 import { useContext, useEffect, useState } from 'react';
-import { ShopContext } from './ShopContext';
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { ShopContext } from '../../context/ShopContext';
 
 function ProductPage() {
-  const { id } = useParams();
-  const { cart, setCart } = useContext(ShopContext);
-  const [product, setProduct] = useState(null);
-  const [showFullDesc, setShowFullDesc] = useState(false);
+    const [product, setProduct] = useState(null);
+    const [showFullDesc, setShowFullDesc] = useState(false);
+    const { id } = useParams();
+    const { cart, setCart } = useContext(ShopContext);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)

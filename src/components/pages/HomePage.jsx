@@ -5,7 +5,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../navigation/Header';
 import Sidebar from '../navigation/Sidebar';
-// import Footer from '../navigation/Footer';
+import Footer from '../navigation/Footer';
 import SortProduct from "../products/product page components/SortProduct";
 import ProductCard from "../products/product page components/ProductCard";
 import { ShopContext } from "../context/ShopContext";
@@ -14,6 +14,7 @@ import { ShopContext } from "../context/ShopContext";
 const HomePage = () => {
   return (
     <div className="home">
+      <Header />
       <Sidebar />
       <img
         src="/path-to-home-image"
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Link to="/hero">
           <button>Shop Now</button>
         </Link>
+        <Footer />
       </div>
     </div>
   );

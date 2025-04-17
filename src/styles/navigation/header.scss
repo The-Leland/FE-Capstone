@@ -1,62 +1,45 @@
 
+@import './variables';
 
 
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: white;
-    box-shadow: 0 4px 2px -2px gray;
-    padding: 10px 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $deep-navy;
+  padding: $spacing-md;
+  color: $crisp-white;
+
   
-  .header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .header nav {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .header nav a {
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .header nav a:hover {
-    color: orange;
-    cursor: pointer;
+  .header__left {
+    .nav-links {
+      display: flex;
+      gap: $spacing-md;
+      
+      a {
+        text-decoration: none;
+        color: $crisp-white;
+        font-family: $font-body;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: $warm-gold;
+        }
+      }
+    }
   }
 
   
-
-  @media (max-width: 768px) {
-    .header {
-      padding: 10px;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .header nav {
-      display: none;
-    }
-  
-    .header .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-  
-    .header .mobile-nav.open {
-      display: block;
+  .header__center {
+    .site-title {
+      font-family: $font-heading;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $crisp-white;
     }
   }
+}
+
   

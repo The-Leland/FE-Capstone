@@ -1,0 +1,39 @@
+@import './variables';
+
+
+.footer {
+    background-color: $charcoal-gray;
+    color: $crisp-white;
+    padding: $spacing-lg;
+    text-align: center;
+  
+    p {
+      font-family: $font-body;
+      font-size: 0.9rem;
+      margin-bottom: $spacing-sm;
+  
+      &.contact-info {
+        margin-top: $spacing-md;
+        color: $warm-gold;
+      }
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-lg;
+      margin-top: $spacing-md;
+  
+      a {
+        text-decoration: none;
+        color: $crisp-white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: $warm-gold;
+        }
+      }
+    }
+  }
+  
