@@ -6,22 +6,22 @@ import SortProduct from "./product page components/SortProduct";
 import ProductCard from "./product page components/ProductCard";
 import { ShopContext } from "../context/ShopContext";
 
-function Electronics() {
+function MensClothing() {
   const [sortField, setSortField] = useState('id');
   const [sortOrder, setSortOrder] = useState('asc');
   const { products } = useContext(ShopContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    const electronics = products.filter(
-      product => product.category === "electronics"
+    const mensProducts = products.filter(
+      product => product.category === "men's clothing"
     );
-    setFilteredProducts(electronics);
+    setFilteredProducts(mensProducts);
   }, [products]);
 
   return (
     <div>
-      <h2>Electronics</h2>
+      <h2>Men's Clothing</h2>
 
       <SortProduct
         sortField={sortField}
@@ -39,4 +39,6 @@ function Electronics() {
   );
 }
 
-export default Electronics;
+export default MensClothing;
+
+  

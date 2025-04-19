@@ -1,35 +1,34 @@
-@import './variables';
+@use '../common/variables' as *;
 
 
 .footer {
+    width: 100%;
     background-color: $charcoal-gray;
     color: $crisp-white;
-    padding: $spacing-lg;
-    text-align: center;
+    padding: 1rem 2rem;
+    font-family: $font-body;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   
     p {
-      font-family: $font-body;
-      font-size: 0.9rem;
-      margin-bottom: $spacing-sm;
-  
-      &.contact-info {
-        margin-top: $spacing-md;
-        color: $warm-gold;
-      }
+      margin: 0;
+      line-height: 1.2;
     }
   
     .footer-links {
       display: flex;
-      justify-content: center;
-      gap: $spacing-lg;
-      margin-top: $spacing-md;
+      gap: 2rem;
+      margin-top: 1rem;
   
       a {
-        text-decoration: none;
         color: $crisp-white;
-        font-weight: bold;
-        transition: color 0.3s ease;
-        
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+  
         &:hover {
           color: $warm-gold;
         }

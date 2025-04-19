@@ -1,45 +1,115 @@
 
-@import './variables';
+@use '../common/variables' as *;
 
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: $deep-navy;
-  padding: $spacing-md;
+  justify-content: space-between;
+  background-color: $charcoal-gray;
+  padding: 0.5rem 1rem;
   color: $crisp-white;
+  height: 60px;
 
-  
   .header__left {
-    .nav-links {
-      display: flex;
-      gap: $spacing-md;
-      
-      a {
-        text-decoration: none;
-        color: $crisp-white;
-        font-family: $font-body;
-        font-weight: bold;
-        transition: color 0.3s ease;
-        
-        &:hover {
-          color: $warm-gold;
-        }
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: $crisp-white;
+      font-family: $font-body;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: $warm-gold;
       }
     }
   }
 
-  
-  .header__center {
-    .site-title {
-      font-family: $font-heading;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+  .hamburger {
+    font-size: 2rem;
+    color: $crisp-white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    z-index: 10;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: $deep-navy;
+    padding: 1rem 0;
+
+    a {
       color: $crisp-white;
+      font-family: $font-body;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem;
+
+      &:hover {
+        color: $warm-gold;
+      }
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  .header__left .nav-links {
+    display: flex;
+  }
+
+  .nav-links.hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: block; 
+    }
+
+    .mobile-menu {
+      display: none; 
+    }
+
+    .mobile-menu.open {
+      display: flex; 
     }
   }
 }
 
-  
+
+
+
+

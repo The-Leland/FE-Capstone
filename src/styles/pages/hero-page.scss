@@ -1,0 +1,147 @@
+
+
+@use "../common/variables" as *;
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero-page {
+  display: flex;
+  flex: 1;
+  background: repeating-linear-gradient(
+    -45deg,
+    $electric-blue,
+    $electric-blue 40px,
+    $neon-coral 40px,
+    $neon-coral 80px,
+    $sunburst-orange 80px,
+    $sunburst-orange 120px,
+    $warm-gold 120px,
+    $warm-gold 160px
+  );
+  background-size: cover;
+  position: relative;
+  padding-top: 60px; 
+}
+
+.hero-content {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $crisp-white;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;  
+
+    a {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img.category-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.hero-page::before {
+  content: "";
+  background-image: url('/images/logo.png'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  z-index: 1;
+}
+
+.hero-page .hero-content {
+  position: relative;
+  z-index: 2; 
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $deep-navy; 
+}
+
+
+footer {
+  margin-top: auto;
+}
+
+
+@media (max-width: 1440px) {
+  .hero-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-categories {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-categories {
+    grid-template-columns: 1fr; 
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}

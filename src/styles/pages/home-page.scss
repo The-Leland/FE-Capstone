@@ -1,9 +1,10 @@
 
 @use "../common/variables.scss" as *;
 
-
-
 .home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-image: 
     url('/images/bg-collage-1.jpg'),
     linear-gradient(to bottom, rgba($crisp-white, 0.95), rgba($gunmetal-gray, 0.7)),
@@ -12,24 +13,25 @@
   background-size: cover;
   background-blend-mode: multiply;
   background-position: center;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: $spacing-lg;
+
+  .header,
+  .footer {
+    width: 100%;
+  }
 
   .home-body {
     display: flex;
+    flex-direction: row;
+    flex: 1;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    flex: 1;
     padding: $spacing-md;
     gap: $spacing-md;
 
     .sidebar {
       flex: 0 0 250px;
+      align-self: flex-start;
     }
 
     .home-main {
@@ -94,4 +96,5 @@
     }
   }
 }
+
 

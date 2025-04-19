@@ -1,13 +1,14 @@
 
-@use "../common/variables.scss" as *;
+@use '../common/variables' as *;
+
+
 
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
+
+    align-self: flex-start;
+    height: auto;
     width: 250px;
-    height: 100vh;
     background-color: $charcoal-gray;
     color: $crisp-white;
     padding: $spacing-lg;
@@ -48,7 +49,7 @@
           align-items: center;
           gap: $spacing-sm;
           margin-bottom: $spacing-sm;
-          max-width: 100%; /* Prevent overflow */
+          max-width: 100%; 
           
           img.sale-thumbnail {
             width: 50px;
@@ -56,9 +57,9 @@
             object-fit: cover;
             border-radius: 6px;
             flex-shrink: 0;
-            max-width: 50px; /* Ensure image doesn’t stretch beyond 50px */
-            max-height: 50px; /* Ensure image doesn’t stretch beyond 50px */
-            transition: all 0.3s ease; /* Add smooth transition */
+            max-width: 50px; 
+            max-height: 50px; 
+            transition: all 0.3s ease;
           }
   
           .sale-info {

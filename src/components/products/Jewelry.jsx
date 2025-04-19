@@ -6,22 +6,22 @@ import SortProduct from "./product page components/SortProduct";
 import ProductCard from "./product page components/ProductCard";
 import { ShopContext } from "../context/ShopContext";
 
-function Electronics() {
+function Jewelry() {
   const [sortField, setSortField] = useState('id');
   const [sortOrder, setSortOrder] = useState('asc');
   const { products } = useContext(ShopContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    const electronics = products.filter(
-      product => product.category === "electronics"
+    const jewelry = products.filter(
+      product => product.category === "jewelry"
     );
-    setFilteredProducts(electronics);
+    setFilteredProducts(jewelry);
   }, [products]);
 
   return (
     <div>
-      <h2>Electronics</h2>
+      <h2>Jewelry</h2>
 
       <SortProduct
         sortField={sortField}
@@ -39,4 +39,4 @@ function Electronics() {
   );
 }
 
-export default Electronics;
+export default Jewelry;

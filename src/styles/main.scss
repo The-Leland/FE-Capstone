@@ -1,18 +1,20 @@
 // imports common at the top media queries at the bottom
 
-@use "./common/variables.scss";
-@use "./common/mixins.scss";
-@use "./common/common.scss";
+@use "./common/variables" as *;
+@use "./common/mixins" as *;
+@use "./common/common" as *;
+@use "sass:color";
 
-@use "./pages/home-page.scss";
-// @use "./pages/cart.scss";
-// @use "./pages/contact.scss";
+@use "./pages/home-page" as *;
+@use "./pages/cart" as *;
+@use "./pages/contact" as *;
 
-// @use "./navigation/header.scss";
-// @use "./navigation/footer.scss";
-// @use "./navigation/sidebar.scss";
+@use "./navigation/header" as *;
+@use "./navigation/footer" as *;
+@use "./navigation/sidebar" as *;
 
-// @use "./products/allproducts.scss";
-// @use "./products/clothing.scss";
-// @use "./products/accessories.scss";
-// @use "./products/electronics.scss";
+// @use "./products/allproducts" as *;
+// @use "./products/mens-clothing" as *;
+// @use "./products/womens-clothing" as *;
+// @use "./products/electronics" as *;
+// @use "./products/jewelry" as *;
