@@ -15,20 +15,27 @@ const HomePage = () => {
   return (
     <div className="home">
       <Header />
-      <Sidebar />
-      <img
-        src="/path-to-home-image"
-        alt="Fresh Banner"
-        className="home-image"
-      />
-      <div className="home-text">
-        <h1>Lookin' Fresh</h1>
-        <p>Taking you from the street to the ballroom and everywhere in between.</p>
-        <Link to="/hero">
-          <button>Shop Now</button>
-        </Link>
-        <Footer />
+
+      <div className="home-body">
+        <Sidebar />
+
+        <div className="home-main">
+          <img
+            src="/path-to-home-image"
+            alt="Fresh Banner"
+            className="home-image"
+          />
+          <div className="home-text">
+            <h1>Lookin' Fresh</h1>
+            <p>Taking you from the street to the ballroom and everywhere in between.</p>
+            <Link to="/hero">
+              <button>Shop Now</button>
+            </Link>
+          </div>
+        </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

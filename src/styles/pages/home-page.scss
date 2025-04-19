@@ -1,7 +1,8 @@
 
 @use "../common/variables.scss" as *;
 
-// 1. Layered Collage Background
+
+
 .home {
   background-image: 
     url('/images/bg-collage-1.jpg'),
@@ -13,59 +14,84 @@
   background-position: center;
   min-height: 100vh;
   position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: $spacing-lg;
 
-  // 2. Home Text Section
-  .home-text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: $crisp-white;
-    background-color: rgba($midnight-black, 0.6);
-    padding: $spacing-lg;
-    border: 2px solid $warm-gold;
-    box-shadow: 0 0 20px rgba($warm-gold, 0.6);
-    border-radius: 10px;
+  .home-body {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    flex: 1;
+    padding: $spacing-md;
+    gap: $spacing-md;
 
-    h1 {
-      font-family: $font-heading;
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .sidebar {
+      flex: 0 0 250px;
     }
 
-    p {
-      font-family: $font-body;
-      font-size: 1.1rem;
-      margin-top: $spacing-sm;
-    }
+    .home-main {
+      flex: 1;
+      position: relative;
 
-    button {
-      margin-top: $spacing-md;
-      padding: 0.75rem 1.5rem;
-      font-family: $font-body;
-      font-size: 1rem;
-      font-weight: 600;
-      background-color: $warm-gold;
-      color: $midnight-black;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba($electric-blue, 0.3);
-      transition: all 0.3s ease;
+      .home-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: $spacing-md;
+      }
 
-      &:hover {
-        background-color: $electric-blue;
+      .home-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
         color: $crisp-white;
-        box-shadow: 0 6px 14px rgba($electric-blue, 0.5);
-        cursor: pointer;
+        background-color: rgba($midnight-black, 0.6);
+        padding: $spacing-lg;
+        border: 2px solid $warm-gold;
+        box-shadow: 0 0 20px rgba($warm-gold, 0.6);
+        border-radius: 10px;
+
+        h1 {
+          font-family: $font-heading;
+          font-size: 3rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        p {
+          font-family: $font-body;
+          font-size: 1.1rem;
+          margin-top: $spacing-sm;
+        }
+
+        button {
+          margin-top: $spacing-md;
+          padding: 0.75rem 1.5rem;
+          font-family: $font-body;
+          font-size: 1rem;
+          font-weight: 600;
+          background-color: $warm-gold;
+          color: $midnight-black;
+          border: none;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba($electric-blue, 0.3);
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $electric-blue;
+            color: $crisp-white;
+            box-shadow: 0 6px 14px rgba($electric-blue, 0.5);
+            cursor: pointer;
+          }
+        }
       }
     }
   }
 }
+

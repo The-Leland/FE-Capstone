@@ -7,14 +7,27 @@ import { ShopContext } from "../context/ShopContext";
 function ProductPage() {
   const [sortField, setSortField] = useState('id');
   const [sortOrder, setSortOrder] = useState('asc');
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const {products} = useContext(ShopContext);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   
 
+useEffect(() => {
+  setFilteredProducts(products)
+}, [products])
+
+useEffect(() => {
+  console.log(filteredProducts)
+}, [filteredProducts])
 
   return (
     <div>
       <h2>Products</h2>
+
+      <FilterSection
+        categories={["men's clothing", "jewelry", "electronics", "women's clothing"]}
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
+      />
 
       
       <SortProduct
@@ -25,7 +38,7 @@ function ProductPage() {
       />
 
       <div className="product-grid">
-        {products.map(product => (
+        {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

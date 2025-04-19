@@ -2,8 +2,8 @@
 
 
 import React, { useState, useContext } from 'react';
-// import './Cart.scss';
 import { ShopContext } from "../context/ShopContext";
+import '../../styles/pages/cart.scss';
 
 
 
@@ -61,18 +61,26 @@ export default function CartPage() {
         <p>Your cart is empty.</p>
       ) : (
         <>
-          {cart.map(item => (
-            <div key={item.id} className="cart-item">
-              <div>{item.product.title}</div>
-              <div>${item.product.price.toFixed(2)}</div>
-              <div className="quantity-controls">
-                <button onClick={() => lessItems(item.id)}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => moreItems(item.id)}>+</button>
-              </div>
-              <button onClick={() => openModal('remove', item)}>Remove</button>
-            </div>
-          ))}
+         {cart.map(item => (
+  <div key={item.id} className="cart-item">
+    <img 
+      src={item.product.image} 
+      alt={item.product.title} 
+      className="cart-item-image" 
+    />
+    <div className="cart-item-details">
+      <div>{item.product.title}</div>
+      <div>${item.product.price.toFixed(2)}</div>
+      <div className="quantity-controls">
+        <button onClick={() => lessItems(item.id)}>-</button>
+        <span>{item.quantity}</span>
+        <button onClick={() => moreItems(item.id)}>+</button>
+      </div>
+      <button onClick={() => openModal('remove', item)}>Remove</button>
+    </div>
+  </div>
+))}
+
 
           <div className="summary">
             <p>Subtotal: ${subtotal.toFixed(2)}</p>
