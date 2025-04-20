@@ -1,7 +1,6 @@
 
 @use '../common/variables' as *;
 
-
 .header {
   display: flex;
   align-items: center;
@@ -10,6 +9,9 @@
   padding: 0.5rem 1rem;
   color: $crisp-white;
   height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   .header__left {
     display: flex;
@@ -45,7 +47,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    display: none; /* Initially hidden */
+    display: none;
     z-index: 10;
 
     &:focus {
@@ -56,13 +58,13 @@
   .mobile-menu {
     display: none;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     background-color: $deep-navy;
-    padding: 1rem 0;
+    padding: 1rem;
 
     a {
       color: $crisp-white;
@@ -70,7 +72,6 @@
       font-size: 1rem;
       font-weight: 600;
       text-decoration: none;
-      padding: 0.5rem;
 
       &:hover {
         color: $warm-gold;
@@ -82,32 +83,21 @@
     }
   }
 
-  .header__left .nav-links {
-    display: flex;
-  }
-
-  .nav-links.hidden {
-    display: none;
-  }
-
   @media (max-width: 768px) {
     .nav-links {
-      display: none;
+      display: flex;
     }
 
     .hamburger {
-      display: block; 
-    }
-
-    .mobile-menu {
-      display: none; 
+      display: block;
     }
 
     .mobile-menu.open {
-      display: flex; 
+      display: flex;
     }
   }
 }
+
 
 
 

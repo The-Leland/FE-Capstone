@@ -31,7 +31,8 @@
 
     .sidebar {
       flex: 0 0 250px;
-      align-self: flex-start;
+      min-height: 100%;
+      align-self: stretch;
     }
 
     .home-main {
@@ -93,6 +94,22 @@
           }
         }
       }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .home-body {
+    flex-direction: column;
+
+    .sidebar {
+      width: 100%;
+      margin-bottom: $spacing-md;
+    }
+
+    .home-main {
+      width: 100%;
     }
   }
 }

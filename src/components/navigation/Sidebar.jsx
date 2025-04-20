@@ -14,13 +14,15 @@ const Sidebar = () => {
   const showSidebar = location.pathname === '/' || location.pathname === '/hero';
 
   if (!showSidebar) return null;
+  
 
   useEffect(() => {
-    console.log(products);
-    const sale = products.filter(item => item.price < 50).slice(0, 7);
-    console.log(sale);
-    setSaleItems(sale);
-  }, []);
+    if (products.length > 0) {
+      const sale = products.filter(item => item.price < 50).slice(0, 7);
+      setSaleItems(sale);
+    }
+  }, [products]);
+  
 
   return (
     <aside className="sidebar">
@@ -39,7 +41,8 @@ const Sidebar = () => {
           {saleItems.map((item) => (
             <li key={item.id} className="sale-item">
               <img 
-                src={item.image || '/path-to-default-image.jpg'} 
+                src={item.image || '/images/default-thumb.jpg'}
+                // src={item.image || '/path-to-default-image.jpg'} 
                 alt={item.title} 
                 className="sale-thumbnail" 
                 loading="lazy"

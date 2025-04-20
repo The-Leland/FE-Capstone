@@ -80,7 +80,7 @@
 
 .hero-page::before {
   content: "";
-  background-image: url('/images/logo.png'); 
+  background-image: url('../../assets/images/header-image.png'); 
   background-repeat: no-repeat;
   background-position: center;
   background-size: 300px;
@@ -143,5 +143,20 @@ footer {
 
   .hero-content p {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-body {
+    flex-direction: column;
+
+    .sidebar {
+      width: 100%;
+      margin-bottom: $spacing-md;
+    }
+
+    .home-main {
+      width: 100%;
+    }
   }
 }

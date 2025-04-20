@@ -3,17 +3,16 @@
 
 import React, { useState, useContext } from 'react';
 import { ShopContext } from "../context/ShopContext";
-import '../../styles/pages/cart.scss';
-
-
+import Header from '../navigation/Header';  
+import Footer from '../navigation/Footer'; 
+import '../../styles/pages/cart.scss';  
 
 const SHIPPING_COST = 5.99;
 
 export default function CartPage() {
-    const [modal, setModal] = useState(null);
-    const [selectedItem, setSelectedItem] = useState(null);
-    const { cart, setCart } = useContext(ShopContext);
-    console.log(cart)
+  const [modal, setModal] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const { cart, setCart } = useContext(ShopContext);
 
   const moreItems = (id) => {
     setCart(cart.map(item =>
@@ -49,38 +48,37 @@ export default function CartPage() {
     setSelectedItem(null);
   };
 
- 
   const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
   const total = subtotal + (cart.length > 0 ? SHIPPING_COST : 0);
 
   return (
     <div className="cart-page">
+      <Header /> 
       <h1>Your Shopping Cart</h1>
 
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <>
-         {cart.map(item => (
-  <div key={item.id} className="cart-item">
-    <img 
-      src={item.product.image} 
-      alt={item.product.title} 
-      className="cart-item-image" 
-    />
-    <div className="cart-item-details">
-      <div>{item.product.title}</div>
-      <div>${item.product.price.toFixed(2)}</div>
-      <div className="quantity-controls">
-        <button onClick={() => lessItems(item.id)}>-</button>
-        <span>{item.quantity}</span>
-        <button onClick={() => moreItems(item.id)}>+</button>
-      </div>
-      <button onClick={() => openModal('remove', item)}>Remove</button>
-    </div>
-  </div>
-))}
-
+          {cart.map(item => (
+            <div key={item.id} className="cart-item">
+              <img 
+                src={item.product.image} 
+                alt={item.product.title} 
+                className="cart-item-image" 
+              />
+              <div className="cart-item-details">
+                <div>{item.product.title}</div>
+                <div>${item.product.price.toFixed(2)}</div>
+                <div className="quantity-controls">
+                  <button onClick={() => lessItems(item.id)}>-</button>
+                  <span>{item.quantity}</span>
+                  <button onClick={() => moreItems(item.id)}>+</button>
+                </div>
+                <button onClick={() => openModal('remove', item)}>Remove</button>
+              </div>
+            </div>
+          ))}
 
           <div className="summary">
             <p>Subtotal: ${subtotal.toFixed(2)}</p>
@@ -111,7 +109,10 @@ export default function CartPage() {
           </div>
         </div>
       )}
+
+      <Footer /> 
     </div>
   );
 }
+
 

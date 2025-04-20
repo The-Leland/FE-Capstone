@@ -5,12 +5,10 @@ import Header from './components/navigation/Header.jsx';
 import Footer from './components/navigation/Footer.jsx';
 import Sidebar from './components/navigation/Sidebar'; 
 import HomePage from './components/pages/HomePage.jsx';
-import Hero from './components/pages/HeroPage.jsx';
+import HeroPage from './components/pages/HeroPage.jsx';
 import Cart from './components/pages/Cart.jsx';
 import Contact from './components/pages/Contact.jsx';
 import AllProducts from "./components/products/AllProducts.jsx";
-import ProductFilter from './components/products/product page components/ProductFilter.jsx';
-import SortProduct from './components/products/product page components/SortProduct.jsx';
 import ProductPage from './components/products/product page components/Product.jsx';
 import MensClothing from './components/products/MensClothing';
 import WomensClothing from './components/products/WomensClothing';
@@ -26,7 +24,7 @@ const App = () => {
           {/* <Sidebar /> */}
           <Switch> {/* Use Switch to wrap Routes */}
             <Route exact path="/" component={HomePage} />
-            <Route path="/hero" component={Hero} />
+            <Route path="/hero" component={HeroPage} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact" component={Contact} />
             <Route path="/products" component={AllProducts} />

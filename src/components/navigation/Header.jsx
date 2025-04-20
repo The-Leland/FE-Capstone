@@ -12,11 +12,10 @@ const Header = () => {
       <div className="header__left">
         <nav className="nav-links">
           <Link to="/">Home</Link>
-          <Link to="/products">All Products</Link>
-          <Link to="/accessories">Accessories</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/about">About</Link>
-          <Link to="/cart">Shopping Cart</Link>
+          <Link to="/products/men">Men's Clothing</Link>
+          <Link to="/products/women">Women's Clothing</Link>
+          <Link to="/products/electronics">Electronics</Link>
+          <Link to="/products/jewelry">Jewelry</Link>
         </nav>
 
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -24,21 +23,22 @@ const Header = () => {
         </button>
 
         <nav className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-          <Link to="/products/men" onClick={() => setMenuOpen(false)}>Men's Clothing</Link>
-          <Link to="/products/women" onClick={() => setMenuOpen(false)}>Women's Clothing</Link>
-          <Link to="/products/electronics" onClick={() => setMenuOpen(false)}>Electronics</Link>
-          <Link to="/products/jewelry" onClick={() => setMenuOpen(false)}>Jewelry</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/cart" onClick={() => setMenuOpen(false)}>Shopping Cart</Link>
         </nav>
       </div>
 
       <div className="header__right">
-        <img src="/path-to-your-logo.png" alt="Logo" className="site-logo" />
+        <img src="/public/src/assets/images/header-image.png" alt="Logo" className="site-logo" />
       </div>
     </header>
   );
 };
 
 export default Header;
+
+
 
 
 

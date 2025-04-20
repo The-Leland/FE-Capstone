@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import SortProduct from "./product page components/SortProduct";
 import ProductCard from "./product page components/ProductCard";
 import { ShopContext } from "../context/ShopContext";
+import "../../styles/products/womens-clothing.scss";
 
 function WomensClothing() {
   const [sortField, setSortField] = useState('id');
