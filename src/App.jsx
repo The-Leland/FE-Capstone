@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // React Router v5 imports
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 import { useState } from 'react';
 
 import Header from './components/navigation/Header.jsx';
