@@ -16,30 +16,23 @@ function Jewelry() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   
   useEffect(() => {
-    console.log("Products data:", products);  // Log the current products state
+    console.log("Products data:", products);  
     
     const jewelry = products.filter(
       product => product.category === "jewelery"
     );
     
-    console.log("Filtered jewelry products:", jewelry);  // Log the filtered jewelry products
+    console.log("Filtered jewelry products:", jewelry);  
     
     setFilteredProducts(jewelry);
   }, [products]);
   
 
-  // useEffect(() => {
-  //   console.log("Products data:", products);
-  //   const jewelry = products.filter(
-  //     product => product.category === "jewelry"
-  //   );
-  //   console.log("Filtereed jewelry products:", jewelry);
-  //   setFilteredProducts(jewelry);
-  // }, [products]);
+
 
   return (
     <div className="page-wrapper">
-      {/* <Header /> */}
+     
       <div className="page-content">
         <h2>Jewelry</h2>
 
@@ -56,7 +49,7 @@ function Jewelry() {
           ))}
         </div>
       </div>
-      {/* <Footer /> */}
+      
     </div>
   );
 }

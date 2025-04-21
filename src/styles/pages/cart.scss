@@ -4,14 +4,14 @@
 @use '../common/variables' as *;
 
 .cart-page {
-  display: flex;                  // Use Flexbox layout
-  flex-direction: column;         // Stack elements vertically
-  min-height: 100vh;              // Make sure the container takes up at least the full viewport height
+  display: flex;                 
+  flex-direction: column;         
+  min-height: 100vh;              
   padding: $spacing-lg;
   font-family: $font-body;
   color: $electric-blue;
 
-  // This will allow the content to grow and push the footer down if necessary
+ 
   .content {
     flex-grow: 1;
   }
