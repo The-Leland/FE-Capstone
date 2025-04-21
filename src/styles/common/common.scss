@@ -1,10 +1,29 @@
 
 
 
+@import '../common/variables';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-// html, body {
-//     background-color: #C2B280;
-// }
+body {
+  font-family: $font-body, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
 
-//default buttons, defualt colors, etc. 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading, sans-serif;
+}
+
+.accent-text {
+  font-family: $font-accent, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

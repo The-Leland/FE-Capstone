@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/navigation/header.scss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__left">
+        <img 
+          src="/src/assets/images/smaller-header-image.png" 
+          alt="Logo"
+          className="site-logo"
+        />
+      </div>
+
+      <div className="header__center">
         <nav className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/products/men">Men's Clothing</Link>
@@ -17,7 +26,9 @@ const Header = () => {
           <Link to="/products/electronics">Electronics</Link>
           <Link to="/products/jewelry">Jewelry</Link>
         </nav>
+      </div>
 
+      <div className="header__right">
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
@@ -28,15 +39,12 @@ const Header = () => {
           <Link to="/cart" onClick={() => setMenuOpen(false)}>Shopping Cart</Link>
         </nav>
       </div>
-
-      <div className="header__right">
-        <img src="/public/src/assets/images/header-image.png" alt="Logo" className="site-logo" />
-      </div>
     </header>
   );
 };
 
 export default Header;
+
 
 
 

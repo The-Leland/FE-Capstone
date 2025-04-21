@@ -21,23 +21,29 @@ function WomensClothing() {
   }, [products]);
 
   return (
-    <div>
-      <h2>Women's Clothing</h2>
+    <div className="page-wrapper">
+      <div className="page-content">
+        <h2>Women's Clothing</h2>
 
-      <SortProduct
-        sortField={sortField}
-        setSortField={setSortField}
-        sortOrder={sortOrder}
-        setSortOrder={setSortOrder}
-      />
+        <SortProduct
+          sortField={sortField}
+          setSortField={setSortField}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+        />
 
-      <div className="product-grid">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        <div className="product-grid">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
 export default WomensClothing;
+
+
+
+

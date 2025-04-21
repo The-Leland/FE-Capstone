@@ -14,17 +14,32 @@ function Jewelry() {
   const [sortOrder, setSortOrder] = useState('asc');
   const { products } = useContext(ShopContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  
   useEffect(() => {
+    console.log("Products data:", products);  // Log the current products state
+    
     const jewelry = products.filter(
-      product => product.category === "jewelry"
+      product => product.category === "jewelery"
     );
+    
+    console.log("Filtered jewelry products:", jewelry);  // Log the filtered jewelry products
+    
     setFilteredProducts(jewelry);
   }, [products]);
+  
+
+  // useEffect(() => {
+  //   console.log("Products data:", products);
+  //   const jewelry = products.filter(
+  //     product => product.category === "jewelry"
+  //   );
+  //   console.log("Filtereed jewelry products:", jewelry);
+  //   setFilteredProducts(jewelry);
+  // }, [products]);
 
   return (
     <div className="page-wrapper">
-      <Header />
+      {/* <Header /> */}
       <div className="page-content">
         <h2>Jewelry</h2>
 
@@ -41,10 +56,11 @@ function Jewelry() {
           ))}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
 
 export default Jewelry;
+
 

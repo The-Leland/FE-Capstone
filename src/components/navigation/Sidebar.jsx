@@ -14,6 +14,7 @@ const Sidebar = () => {
   const showSidebar = location.pathname === '/' || location.pathname === '/hero';
 
   if (!showSidebar) return null;
+
   
 
   useEffect(() => {

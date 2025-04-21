@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import SortProduct from "./product page components/SortProduct";
 import ProductCard from "./product page components/ProductCard";
 import { ShopContext } from "../context/ShopContext";
+import "../../styles/products/mens-clothing.scss";
 
 function MensClothing() {
   const [sortField, setSortField] = useState('id');
@@ -20,25 +21,26 @@ function MensClothing() {
   }, [products]);
 
   return (
-    <div>
-      <h2>Men's Clothing</h2>
-
-      <SortProduct
-        sortField={sortField}
-        setSortField={setSortField}
-        sortOrder={sortOrder}
-        setSortOrder={setSortOrder}
-      />
-
-      <div className="product-grid">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <div className="page-wrapper">
+      <div className="page-content">
+        <h2>Men's Clothing</h2>
+        <SortProduct
+          sortField={sortField}
+          setSortField={setSortField}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+        />
+        <div className="product-grid">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
 export default MensClothing;
+
 
   

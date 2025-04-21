@@ -41,7 +41,6 @@
   }
 }
 
-// Button and card styles (reused from other pages)
 button, .sort-button {
   background-color: $deep-navy;
   color: $crisp-white;
@@ -78,7 +77,6 @@ button, .sort-button {
   }
 }
 
-// Responsive support
 @media (max-width: 768px) {
   .page-content {
     padding: 1rem;

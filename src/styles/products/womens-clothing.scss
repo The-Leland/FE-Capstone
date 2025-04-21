@@ -3,75 +3,99 @@
 
 @use '../common/variables' as *;
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  background-color: $crisp-white;
-}
 
-.product-grid h2 {
-  text-align: center;
-  font-family: $font-body;
-  font-size: 2rem;
-  font-weight: 600;
-  color: $deep-navy;
-  margin-bottom: 1.5rem;
-}
-
-.product-grid .product-card {
-  border: 2px solid $deep-navy;
-  border-radius: 8px;
-  padding: 1rem;
-  background-color: $crisp-white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
-
-  .product-info {
+.page-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-
-    .product-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: $deep-navy;
-      text-align: center;
-      margin-bottom: 0.5rem;
+    min-height: 100vh;
+    background: repeating-linear-gradient(
+      -45deg,
+      $electric-blue,
+      $electric-blue 40px,
+      $neon-coral 40px,
+      $neon-coral 80px,
+      $sunburst-orange 80px,
+      $sunburst-orange 120px,
+      $warm-gold 120px,
+      $warm-gold 160px
+    );
+    background-size: cover;
+  }
+  
+  .page-content {
+    flex: 1;
+    padding: 2rem;
+    color: $crisp-white;
+    text-align: center;
+  
+    h2 {
+      font-size: 2.5rem;
+      font-family: $font-heading;
+      margin-bottom: 1rem;
     }
-
-    .product-price {
-      font-size: 1rem;
-      font-weight: 500;
-      color: $warm-gold;
+  
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
   }
-}
-
-@media (max-width: 768px) {
-  .product-grid {
+  
+  button, .sort-button {
+    background-color: $deep-navy;
+    color: $crisp-white;
+    border: 2px solid $warm-gold;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: $font-body;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: $warm-gold;
+      color: $charcoal-gray;
+    }
+  }
+  
+  .product-card {
+    border: 2px solid $deep-navy;
+    border-radius: 10px;
     padding: 1rem;
-  }
+    background-color: rgba(255, 255, 255, 0.05);
+    color: $crisp-white;
+    transition: transform 0.3s;
 
-  .product-grid h2 {
-    font-size: 1.8rem;
+    button {
+        background-color: $forest-green;
+        color: $crisp-white;
+        border: 2px solid $deep-navy;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+  
+    &:hover {
+      transform: scale(1.03);
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid $deep-navy;
+      object-fit: cover;
+    }
   }
-
-  .product-grid .product-card {
-    padding: 0.8rem;
+  
+  @media (max-width: 768px) {
+    .page-content {
+      padding: 1rem;
+  
+      h2 {
+        font-size: 2rem;
+      }
+    }
   }
-}
+  

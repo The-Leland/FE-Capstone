@@ -54,6 +54,7 @@ function ContactForm() {
           </label>
           <label>
             Last Name<span style={{ color: 'red' }}>*</span>
+            </label>
             <input
               type="text"
               name="lastName"
@@ -61,7 +62,6 @@ function ContactForm() {
               onChange={handleChange}
               required
             />
-          </label>
           <label>
             Email<span style={{ color: 'red' }}>*</span>
             <input

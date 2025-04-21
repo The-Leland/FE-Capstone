@@ -15,9 +15,17 @@ export default function ShopProvider({ children }) {
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => setProducts(data));
-      },[]);
+          .then(response => response.json())
+          .then((data) => {
+            setProducts(data);
+            console.log("Products fetched from API:", data);
+          })
+          .catch((error) => {
+            console.error("Failed to fetch products:", error);
+          });
+      }, []);
+
+      console.log("📦 Products in context:", products);
 
     const shopState = {
         products, setProducts, cart, setCart, addCart

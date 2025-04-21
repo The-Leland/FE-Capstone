@@ -44,9 +44,10 @@
     border: 2px solid $deep-navy;
     border-radius: 10px;
     overflow: hidden;
-    background-color: $crisp-white;
+    background-color: transparent;
     color: $charcoal-gray;
     transition: transform 0.3s ease;
+    position: relative;
 
     &:hover {
       transform: scale(1.03);
@@ -59,7 +60,7 @@
     }
 
     button {
-      background-color: $neon-coral;
+      background-color: $forest-green;
       color: $crisp-white;
       border: 2px solid $deep-navy;
       padding: 0.5rem 1rem;

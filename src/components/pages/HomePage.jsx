@@ -3,28 +3,29 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../navigation/Header';
 import Sidebar from '../navigation/Sidebar';
-import Footer from '../navigation/Footer';
-import SortProduct from "../products/product page components/SortProduct";
-import ProductCard from "../products/product page components/ProductCard";
-import { ShopContext } from "../context/ShopContext";
-
+import "../../styles/pages/home-page.scss";
 
 const HomePage = () => {
   return (
     <div className="home">
-      <Header />
-
       <div className="home-body">
         <Sidebar />
 
         <div className="home-main">
           <img
-            src="/path-to-home-image"
+            src="/images/fresh-banner.jpg"
             alt="Fresh Banner"
             className="home-image"
           />
+
+          <div className="home-image-grid">
+            <img src="/src/assets/images/city-life.png" alt="City Life" />
+            <img src="/src/assets/images/vroom.png" alt="Vroom" />
+            <img src="/src/assets/images/sweet-bike-image.png" alt="Sweet Bike" />
+            <img src="/src/assets/images/the-ladies.png" alt="The Ladies" />
+          </div>
+
           <div className="home-text">
             <h1>Lookin' Fresh</h1>
             <p>Taking you from the street to the ballroom and everywhere in between.</p>
@@ -34,10 +35,10 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
 
 export default HomePage;
+
+

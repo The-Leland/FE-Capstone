@@ -1,4 +1,4 @@
-//to connect to cart need to link add to cart button with setCart from useContext
+
 
 
 import React, { useState, useContext } from 'react';
@@ -7,9 +7,7 @@ import { ShopContext } from '../../context/ShopContext';
 
 function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(0);
-  const {addCart} = useContext(ShopContext);
-
-
+  const { addCart } = useContext(ShopContext);
 
   return (
     <div
@@ -24,7 +22,7 @@ function ProductCard({ product }) {
         cursor: 'pointer'
       }}
       onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
-      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.03)'}
+      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
     >
       <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <img src={product.image} alt={product.title} style={{ width: '100%' }} />
@@ -38,7 +36,6 @@ function ProductCard({ product }) {
         <button onClick={() => setQuantity(q => q + 1)}>+</button>
       </div>
 
-      
       <button
         onClick={() => addCart(product, quantity)}
         disabled={quantity === 0}

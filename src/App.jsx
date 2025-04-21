@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // React Router v5 imports
 import { useState } from 'react';
 
@@ -8,34 +9,34 @@ import HomePage from './components/pages/HomePage.jsx';
 import HeroPage from './components/pages/HeroPage.jsx';
 import Cart from './components/pages/Cart.jsx';
 import Contact from './components/pages/Contact.jsx';
-import AllProducts from "./components/products/AllProducts.jsx";
 import ProductPage from './components/products/product page components/Product.jsx';
 import MensClothing from './components/products/MensClothing';
 import WomensClothing from './components/products/WomensClothing';
 import Electronics from './components/products/Electronics';
 import Jewelry from './components/products/Jewelry';
+import AllProducts from "./components/products/AllProducts.jsx";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* <Header /> */}
+        <Header />
         <div className="main-content">
           {/* <Sidebar /> */}
-          <Switch> {/* Use Switch to wrap Routes */}
+          <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/hero" component={HeroPage} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact" component={Contact} />
-            <Route path="/products" component={AllProducts} />
-            <Route path="/product/:id" component={ProductPage} />
             <Route path="/products/men" component={MensClothing} />
             <Route path="/products/women" component={WomensClothing} />
             <Route path="/products/electronics" component={Electronics} />
             <Route path="/products/jewelry" component={Jewelry} />
+            <Route path="/products" component={AllProducts} />
+            <Route path="/product/:id" component={ProductPage} />
           </Switch>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
